@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fire finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #map {
+            height: 60em;
+            width: 140em;
+        }
+        .leaflet-tile {
+            filter: grayscale(100%) brightness(70%);
+        }
+    </style>
+</head>
+<body>
+  <section id="header">
+    <section id="top">
+      <section id="bonk">
+        <section class="left">
+          <img src="./icon.png" id="icon">
+          <h1 class="topbar" id="title">fire finder</h1>
+        </section>
+        <section class="right">
+            <!-- <p class="topbar">dashboard</p> -->
+            <a href="./map.html" class="topbar">dashboard</a>
+            <p class="topbar">personal</p>
+            <p class="topbar">emergency authorities</p>
+            </section>
+        </section>
+    </section>
+   </section>
+   <section id="main">
+        <button>enter your county name</button>
+        <section id="mapContainer">
+            <div id="map"></div>
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script src="leaflet.js"></script>
+        </section>
+    </section>
+</body>
+</html>
