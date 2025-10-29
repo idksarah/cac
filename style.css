@@ -169,3 +169,7 @@ select {
 select{
   margin-top: 2rem;
 }
+
+:root {
+ margin-bottom: 4rem;
+}
