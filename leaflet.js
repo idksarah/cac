@@ -39,17 +39,18 @@ let report = document.getElementById("report");
   new Chart(ctx, {
     type: "bar",
     data: {
-      labels: ["Population (M)", "Area (mi²)", "Drought Index (D0-D4)", "Recent Fires"],
+      labels: ["Population (M)", "Area (mi²)", "Drought Index (D0-D4)", "Recent Fires", "Risk Index (1-10)"],
       datasets: [{
         label: `${name} County Stats`,
         data: [
           parseFloat(stats.population.replace(/[^\d.]/g, "")) * 100,
           parseFloat(stats.area.replace(/[^\d.]/g, "")) / 100,
           stats.droughtIndex,      
-          stats.recentFires
+          stats.recentFires,
+          stats.riskIndex
         ],
 
-        backgroundColor: ["#71b3f9ff", "#ff9730ff", "#ff7151ff", "#ff585bff"],
+        backgroundColor: ["#f9db71ff", "#ff9730ff", "#ff7151ff", "#ff585bff", "#ff3232ff"],
         borderRadius: 6
       }]
     },
@@ -59,7 +60,6 @@ let report = document.getElementById("report");
         legend: { display: false },
         title: {
           display: true,
-          text: `${stats.riskLevel} Fire Risk`,
           color: "#333",
           font: { size: 16, weight: "bold" }
         }
@@ -186,13 +186,13 @@ const countyStats = {
     area: "821 mi²",
     recentFires: 7,
     droughtIndex: 0,
-    riskLevel: "Low",
-    report: "Alameda County, with a population of 1.67 million over 821 square miles, has experienced 7 wildfires in the past five years. Its drought index is 0, contributing to a low wildfire risk. Overall, wildfire activity remains limited due to lower drought stress and urbanized landscapes."  },
+    riskIndex: 3,
+    report: "Alameda County, with a population of 1.67 million over 821 square miles, has experienced 7 wildfires in the past five years. Its drought index is 0, and its risk index is 3, contributing to a low wildfire risk. Overall, wildfire activity remains limited due to lower drought stress and urbanized landscapes."  },
   "San Bernardino": {
     population: "2.18M",
     area: "20,105 mi²",
     recentFires: 53,
     droughtIndex: 2,
-    riskLevel: "Severe",
-    report: "San Bernardino County, spanning 20,105 square miles with 2.18 million residents, has experienced 53 wildfires in the last five years. With a drought index of 2, the county faces severe wildfire risk, driven by dry conditions and dense vegetation. Wildfire monitoring and preparedness are critical for this region."  }
+    riskIndex: 8,
+    report: "San Bernardino County, spanning 20,105 square miles with 2.18 million residents, has experienced 53 wildfires in the last five years. With a drought index of 2, and a risk index of 8, the county faces severe wildfire risk, driven by dry conditions and dense vegetation. Wildfire monitoring and preparedness are critical for this region."  }
 };
